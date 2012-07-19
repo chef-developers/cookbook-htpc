@@ -18,5 +18,11 @@
 #
 
 apt_repository "jdownloader" do
-  uri "ppa:jd-team/jdownloader"
+  uri "http://ppa.launchpad.net/jd-team/jdownloader/ubuntu"
+	distribution node['lsb']['codename']
+	components ["main"]
+	keyserver "keyserver.ubuntu.com"
+  key "6A68F637"
 end
+
+package 'jdownloader'
